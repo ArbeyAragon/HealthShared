@@ -71,6 +71,7 @@ public class GameController : MonoBehaviour
     private const float _distance = 2.0f; 
     private float speed = 30.0f;  // Speed of our cube
     private GameObject model;
+
     void Start()
     {
         /*MLHands.Start(); // Start the hand tracking.
@@ -122,6 +123,14 @@ public class GameController : MonoBehaviour
                 GameObject dat = GameObject.Instantiate(historicalData);
                 dat.transform.SetParent(person.transform);
                 dat.transform.position = child.transform.position;
+                if (Random.Range(0.0f, 5.0f) > 5) {
+                    HistData d = new HistData(
+                        _medicalSpriteList["WristX"],
+                        "Dic/03/2019",
+                        "cough was persistent. Cough produces blood. Pain in the chest, back and shoulders that worsens during coughing, laughing or deep breathing.",
+                        "cough that was persistent. Cough produces blood. Pain in the chest, back and shoulders that worsens during coughing, laughing or deep breathing. Difficulties for breathing.");
+                    d.GetComponent<HistoricalController>().SetData(d);
+                }
             }
         }
     }

@@ -38,7 +38,7 @@ public class HistoricalController : MonoBehaviour
         _camera = GameObject.Find("Main Camera");
     }
 
-    void SetData(HistData dat) {
+    public void SetData(HistData dat) {
         TemplateShort.SetActive(true);
         TemplateLong.SetActive(false);
     }
