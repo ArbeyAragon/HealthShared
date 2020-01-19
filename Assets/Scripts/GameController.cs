@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour
     public GameObject line;
     public GameObject detail;
     public GameObject person;
+    public GameObject historicalData;
     private bool _freeze = false;
     private bool validCondition = true;
 
@@ -114,8 +115,14 @@ public class GameController : MonoBehaviour
 
         foreach (Transform child in model.transform)
         {
-            Debug.Log(child.gameObject.name);
-            Debug.Log(child.transform.position);
+            if (child.gameObject.name != "Model")
+            {
+                Debug.Log(child.gameObject.name);
+                Debug.Log(child.transform.position);
+                GameObject dat = GameObject.Instantiate(historicalData);
+                dat.transform.SetParent(person.transform);
+                dat.transform.position = child.transform.position;
+            }
         }
     }
 
@@ -176,12 +183,6 @@ public class GameController : MonoBehaviour
         obj.transform.rotation = Quaternion.Slerp(obj.transform.rotation, rotTo, speed);
     }
 
-    public void HeadRot(GameObject obj, float speed)
-    {
-        speed = Time.deltaTime * speed;
-        Quaternion rotTo = Quaternion.LookRotation(obj.transform.position - _camera.transform.position);
-        obj.transform.rotation = Quaternion.Slerp(obj.transform.rotation, rotTo, speed);
-    }
 
     GameObject GetChildWithName(GameObject obj, string name)
     {

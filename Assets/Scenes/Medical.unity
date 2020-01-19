@@ -851,6 +851,8 @@ MonoBehaviour:
   line: {fileID: 3401770442141270229, guid: cdbc4c0beb930b2438b11497adf263f1, type: 3}
   detail: {fileID: 0}
   person: {fileID: 1594937222}
+  historicalData: {fileID: 3858490524210371825, guid: 53c4567d3551a1f47b5840073c024a56,
+    type: 3}
 --- !u!4 &1023944302
 Transform:
   m_ObjectHideFlags: 0
@@ -1199,7 +1201,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1712460411
 Transform:
   m_ObjectHideFlags: 0
